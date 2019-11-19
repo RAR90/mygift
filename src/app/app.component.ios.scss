@@ -1,0 +1,29 @@
+@import 'app.component';
+
+// Place any CSS rules you want to apply only on Android here
+TabStripItem Label {
+    color: $grey;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+TabStripItem Image {
+    color: $grey;
+}
+
+TabStripItem:active Label {
+    color: $green;
+}
+
+TabStripItem:active Image {
+    color: $green;
+}
+
+
+TabStripItem:active Label {
+    color: $green;
+}
+
+TabStripItem:active Image {
+    color: $green;
+}

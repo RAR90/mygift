@@ -1,0 +1,155 @@
+<ActionBar
+  title="test"
+  class="action-bar main-gradient"
+  ios:backgroundColor="rgb(1, 145, 97)"
+>
+
+  <StackLayout
+    orientation="horizontal"
+    horizontalAlignment="center"
+    class="action-bar-content"
+    ios:paddingTop="0"
+    ios:marginTop="0"
+    elevation="3"
+  >
+
+    <Image
+      src="~/images/upicon.png"
+      class="action-bar-icon"
+      ios:height="33">
+    </Image>
+
+    <Label
+      class="action-bar-title"
+      text="MyGift">
+    </Label>
+
+  </StackLayout>
+</ActionBar>
+
+<AbsoluteLayout>
+
+  <StackLayout
+    text="Barra"
+    left="0"
+    top="0"
+    height="35"
+    width="100%"
+    backgroundColor="#68a9f5"
+    orientation="horizontal"
+    horizontalAlignment="center"
+  >
+    <Image src="font://&#xF041;" class="fa t-24" height="14" marginRight="5" marginLeft="15" color="#FFF"></Image>
+    <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13... " ios:marginTop="4" android:marginTop="5" color="#FFF"></Label>
+    <Label class="action-bar-endereco" marginRight="15" text="Alterar" marginTop="4" color="#FFF"></Label>
+
+  </StackLayout>
+
+  <GridLayout left="0" top="35" height="100%" width="100%" class="page page-content">
+
+    <ListView [items]="items" class="list-group" separatorColor="white">
+      <ng-template let-item="item" >
+
+        <StackLayout
+        >
+
+          <GridLayout
+            class="list-group-item"
+            rows="auto, *"
+            columns="auto, *"
+          >
+            <Image width="199px" height="199px" row="0" col="0" [src]="item.image" marginLeft="0" marginRight="15"></Image>
+
+            <StackLayout
+              row="0"
+              col="1"
+              orientation="vertical"
+            >
+
+              <Label
+                [nsRouterLink]="['../item', item.id]"
+                [text]="item.name"
+                fontSize="20">
+              </Label>
+
+              <StackLayout
+                orientation="horizontal"
+              >
+
+                <Label
+                  text="R$"
+                  marginTop="4"
+                  marginRight="5"
+                  fontSize="12">
+                </Label>
+
+                <Label
+                  text="800,00"
+                  fontSize="20">
+                </Label>
+
+              </StackLayout>
+              <StackLayout
+                orientation="horizontal"
+              >
+                <Image src="font://&#xF0D1;" class="fa t-24" color="#00d790" height="14" marginRight="5"></Image>
+                <Label text="Grátis" fontSize="11" class="green"></Label>
+              </StackLayout>
+          </StackLayout>
+
+
+          </GridLayout>
+          <Label text="1" width="80%" height="0.5" background="#CCC"></Label>
+
+        </StackLayout>
+
+
+
+      </ng-template>
+    </ListView>
+
+  </GridLayout>
+
+</AbsoluteLayout>
+<!-- <ActionBar
+  title="test"
+  class="action-bar main-gradient"
+  backgroundColor="green"
+  height="200"
+>
+  <StackLayout
+    orientation="vertical"
+    ios:horizontalAlignment="center"
+    android:horizontalAlignment="left"
+  >
+
+    <StackLayout
+      orientation="horizontal"
+      horizontalAlignment="center"
+      class="action-bar-content"
+    >
+
+      <Image src="~/images/upicon.png" class="action-bar-icon"></Image>
+      <Label class="action-bar-title" text="MyGift"></Label>
+
+
+    </StackLayout>
+
+    <StackLayout
+      orientation="horizontal"
+      class="action-bar-local"
+      horizontalAlignment="center"
+    >
+
+      <Image src="font://&#xF041;" class="fa t-24" height="15" marginRight="5"></Image>
+      <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13..."></Label>
+      <Button class="action-bar-btn" text="Alterar" tap=""></Button>
+
+    </StackLayout>
+
+  </StackLayout>
+
+</ActionBar> -->
+
+
+

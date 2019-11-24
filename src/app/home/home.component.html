@@ -27,7 +27,7 @@
   </StackLayout>
 </ActionBar>
 
-<AbsoluteLayout>
+<AbsoluteLayout >
 
   <StackLayout
     text="Barra"
@@ -38,6 +38,7 @@
     backgroundColor="#68a9f5"
     orientation="horizontal"
     horizontalAlignment="center"
+    elevation="3"
   >
     <Image src="font://&#xF041;" class="fa t-24" height="14" marginRight="5" marginLeft="15" color="#FFF"></Image>
     <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13... " ios:marginTop="4" android:marginTop="5" color="#FFF"></Label>
@@ -47,7 +48,7 @@
 
   <GridLayout left="0" top="35" height="100%" width="100%" class="page page-content">
 
-    <ListView [items]="items" class="list-group" separatorColor="white">
+    <ListView [items]="items" class="list-group" separatorColor="#CCC">
       <ng-template let-item="item" >
 
         <StackLayout
@@ -58,7 +59,7 @@
             rows="auto, *"
             columns="auto, *"
           >
-            <Image width="199px" height="199px" row="0" col="0" [src]="item.image" marginLeft="0" marginRight="15"></Image>
+            <Image width="100" height="100" row="0" col="0" [src]="item.image" marginLeft="0" marginRight="15" borderRadius="5"></Image>
 
             <StackLayout
               row="0"
@@ -69,7 +70,15 @@
               <Label
                 [nsRouterLink]="['../item', item.id]"
                 [text]="item.name"
-                fontSize="20">
+                fontSize="15">
+              </Label>
+
+              <Label
+                [nsRouterLink]="['../item', item.id]"
+                [text]="item.description"
+                textWrap="true"
+                fontSize="15"
+                color="#999">
               </Label>
 
               <StackLayout
@@ -77,29 +86,32 @@
               >
 
                 <Label
-                  text="R$"
-                  marginTop="4"
-                  marginRight="5"
-                  fontSize="12">
+                  text="R$ 800,00"
+                  fontSize="18">
                 </Label>
 
                 <Label
-                  text="800,00"
-                  fontSize="20">
+                  text="R$ 800,00"
+                  fontSize="18"
+                  textDecoration="line-through"
+                  color="#999"
+                  paddingLeft="10">
                 </Label>
 
               </StackLayout>
+
               <StackLayout
                 orientation="horizontal"
               >
                 <Image src="font://&#xF0D1;" class="fa t-24" color="#00d790" height="14" marginRight="5"></Image>
-                <Label text="Grátis" fontSize="11" class="green"></Label>
-              </StackLayout>
-          </StackLayout>
+                <Label text="Grátis" fontSize="10" class="green"></Label>
 
+              </StackLayout>
+
+            </StackLayout>
 
           </GridLayout>
-          <Label text="1" width="80%" height="0.5" background="#CCC"></Label>
+          <!-- <Label text="1" width="95%" height="0.5" background="#CCC"></Label> -->
 
         </StackLayout>
 

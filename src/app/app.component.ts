@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { isAndroid } from "tns-core-modules/platform";
 
 @Component({
@@ -7,6 +7,9 @@ import { isAndroid } from "tns-core-modules/platform";
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
+    [x: string]: any;
+
+    @ViewChild("bottomNavigation", {static: false}) bottomNavigation: ElementRef;
 
     constructor() {
         // Use the component constructor to inject providers.

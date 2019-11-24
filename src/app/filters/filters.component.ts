@@ -5,11 +5,11 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { AppComponent } from "../app.component";
 
 @Component({
-    selector: "Browse",
-    templateUrl: "./browse.component.html"
+    selector: "Filters",
+    templateUrl: "./filters.component.html"
 })
 
-export class BrowseComponent implements OnInit {
+export class FiltersComponent implements OnInit {
 
     constructor(private routerExtensions: RouterExtensions, private appComponent: AppComponent) {
         // Use the component constructor to inject providers.

@@ -14,100 +14,100 @@ export class DataService {
 
     private items = new Array<IDataItem>(
         {
-            id: 1,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 1"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 2,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 2"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 3,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 3"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 4,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 4"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 5,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 5"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 6,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 6"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 7,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 7"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 8,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 8"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 9,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 9"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 10,
-            name: "Nome do produto de exexmplo",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 10"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 11,
-            name: "Item 11",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 11"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 12,
-            name: "Item 12",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 12"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 13,
-            name: "Item 13",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 13"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 14,
-            name: "Item 14",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 14"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 15,
-            name: "Item 15",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 15"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         },
         {
-            id: 16,
-            name: "Item 16",
+            id: 0,
+            name: "Nome do produto",
             image: "https://loremflickr.com/600/600/pants",
-            description: "Description for Item 16"
+            description: "Descrição de exemplo do item de exemplo, limite de 65 caracteres."
         }
     );
 

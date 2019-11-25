@@ -1,0 +1,51 @@
+<ActionBar
+  title="test"
+  class="action-bar main-gradient"
+  ios:backgroundColor="rgb(1, 145, 97)"
+>
+
+  <StackLayout
+    orientation="horizontal"
+    horizontalAlignment="left"
+    class="action-bar-content"
+    ios:paddingTop="0"
+    ios:marginTop="0"
+    elevation="3"
+  >
+
+    <Image
+      src="~/images/upicon.png"
+      class="action-bar-icon"
+      ios:height="33">
+    </Image>
+
+    <Label
+      class="action-bar-title"
+      text="MyGift">
+    </Label>
+
+  </StackLayout>
+
+  <ActionItem
+    tap=""
+    position="right"
+    ios.position="right"
+  >
+    <StackLayout
+      orientation="horizontal"
+    >
+
+    </StackLayout>
+
+  </ActionItem>
+</ActionBar>
+
+<GridLayout class="page page-content">
+  <StackLayout
+    orientation="vertical"
+  >
+    <Label class="page-placeholder" text="informações pessoais"></Label>
+    <Label class="page-placeholder" text="endereços de entrega"></Label>
+    <Label class="page-placeholder" text="cadastrar meio de pagamento"></Label>
+  </StackLayout>
+</GridLayout>

@@ -6,10 +6,15 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 const routes: Routes = [
     {
         path: "",
-        redirectTo: "/(productsTab:products/default//filtersTab:filters/default//browseTab:browse/default//searchTab:search/default)",
+        redirectTo: "/(productsTab:products/default//filtersTab:filters/default//browseTab:browse/default//searchTab:search/default//profileTab:profile/default)",
         pathMatch: "full"
     },
-
+    {
+        path: "profile",
+        component: NSEmptyOutletComponent,
+        loadChildren: () => import("~/app/profile/profile.module").then((m) => m.ProfileModule),
+        outlet: "profileTab"
+    },
     {
         path: "products",
         component: NSEmptyOutletComponent,

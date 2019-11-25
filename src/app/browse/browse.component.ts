@@ -3,6 +3,7 @@ import { EventData } from "tns-core-modules/ui/page/page";
 import { Switch } from "tns-core-modules/ui/switch/switch";
 import { RouterExtensions } from "nativescript-angular/router";
 import { AppComponent } from "../app.component";
+import { IDataItem, DataService } from "../shared/cart.service";
 
 @Component({
     selector: "Browse",
@@ -11,7 +12,13 @@ import { AppComponent } from "../app.component";
 
 export class BrowseComponent implements OnInit {
 
-    constructor(private routerExtensions: RouterExtensions, private appComponent: AppComponent) {
+    items: Array<IDataItem>;
+
+    constructor(
+        private _itemService: DataService,
+        private routerExtensions: RouterExtensions,
+        private appComponent: AppComponent
+    ) {
         // Use the component constructor to inject providers.
     }
 
@@ -25,7 +32,7 @@ export class BrowseComponent implements OnInit {
     }
 
     ngOnInit(): void {
-
+        this.items = this._itemService.getItems();
         // methods here
     }
 }

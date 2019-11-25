@@ -37,7 +37,8 @@
 
       <Label
         marginRight="15"
-        text="Filtrar"
+        class="fa"
+        text="&#xF155; Pagar"
         color="white">
       </Label>
 
@@ -46,32 +47,131 @@
   </ActionItem>
 </ActionBar>
 
-
-<ScrollView orientation="vertical">
+<AbsoluteLayout >
 
   <StackLayout
-    class="page page-content"
-    orientation="vertical"
-    ios:verticalAlignment="top"
-    padding="25"
+    text="Barra"
+    left="0"
+    top="0"
+    height="35"
+    width="100%"
+    backgroundColor="#68a9f5"
+    orientation="horizontal"
+    horizontalAlignment="center"
+    elevation="3"
   >
-
-    <Label
-      text="Carrinho"
-      textWrap="true"
-      fontSize="32pt"
-      color="#00d790"
-      width="100%"
-      paddingBottom="25">
-    </Label>
-
-    <Label
-      text="Selecione as características para filtrar os products!"
-      textWrap="true"
-      width="100%"
-      paddingBottom="25">
-    </Label>
+    <Image src="font://&#xF041;" class="fa t-24" height="14" marginRight="5" marginLeft="15" color="#FFF"></Image>
+    <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13... " ios:marginTop="4" android:marginTop="5" color="#FFF"></Label>
+    <Label class="action-bar-endereco" marginRight="15" text="Alterar" marginTop="4" color="#FFF"></Label>
 
   </StackLayout>
 
-</ScrollView>
+  <GridLayout left="0" top="35" height="100%" width="100%" class="page page-content">
+    <ListView [items]="items" class="list-group" separatorColor="#CCC">
+      <ng-template let-item="item" >
+        <StackLayout
+          [nsRouterLink]="['../item', item.id]"
+        >
+          <GridLayout
+            class="list-group-item"
+            rows="auto, *"
+            columns="auto, *"
+          >
+
+            <Image width="100" height="100" row="0" col="0" [src]="item.image" marginLeft="0" marginRight="15" borderRadius="5"></Image>
+
+            <!-- Products info -->
+            <StackLayout
+              row="0"
+              col="1"
+              orientation="vertical"
+            >
+
+              <!-- Name -->
+              <Label
+                [text]="item.name"
+                fontSize="16">
+              </Label>
+              <!--/ Name -->
+
+              <!-- Price -->
+              <StackLayout
+                orientation="horizontal"
+                marginBottom="5"
+              >
+
+                <Label
+                  text="R$ 400,00"
+                  fontSize="14">
+                </Label>
+
+              </StackLayout>
+              <!--/ Price -->
+
+              <!-- Delivery -->
+              <StackLayout
+                orientation="horizontal"
+                marginBottom="10"
+              >
+                <Label
+                  text="&#xF0D1; Grátis"
+                  fontSize="12"
+                  class="fa"
+                  color="rgb(15, 142, 98)">
+                </Label>
+
+                <Label
+                  text="&#xf017; Em 2 horas!"
+                  fontSize="12"
+                  marginLeft="10"
+                  class="fa"
+                  color="rgb(90, 160, 244)" >
+                </Label>
+
+              </StackLayout>
+              <!--/ Delivery -->
+
+              <!-- Actions -->
+              <StackLayout
+                orientation="horizontal"
+              >
+
+                <Button
+                  (tap)="goToProducts()"
+                  class="btn-primary"
+                  backgroundColor="rgb(245, 245, 245)"
+                  borderRadius="5"
+                  color="#444"
+                  padding="5"
+                  height="30"
+                >
+                  <Span class="fa" text="Quantidade: 1" margin="0"></Span>
+                </Button>
+
+                <Button
+                  (tap)="goToProducts()"
+                  class="btn-primary"
+                  backgroundColor="rgb(245, 245, 245)"
+                  borderRadius="5"
+                  color="red"
+                  padding="5"
+                  width="30"
+                  height="30"
+                  marginLeft="10"
+                >
+                  <Span class="fa" text="&#xF014;" margin="0"></Span>
+                </Button>
+
+              </StackLayout>
+              <!--/ Actions -->
+
+            </StackLayout>
+            <!--/ Products info -->
+
+          </GridLayout>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+  </GridLayout>
+
+</AbsoluteLayout>

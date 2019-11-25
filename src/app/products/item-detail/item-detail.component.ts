@@ -56,7 +56,7 @@ export class ItemDetailComponent implements OnInit {
 
         const options = {
             title: "Quantidade",
-            message: "Seleciona quantos produtos desse você quer",
+            message: "Seleciona quantos products desse você quer",
             cancelButtonText: "Cancel",
             actions: ["1", "2", "3", "4", "Mais De 5"]
         };

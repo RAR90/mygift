@@ -44,14 +44,35 @@
     <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13... " ios:marginTop="4" android:marginTop="5" color="#FFF"></Label>
     <Label class="action-bar-endereco" marginRight="15" text="Alterar" marginTop="4" color="#FFF"></Label>
 
+
   </StackLayout>
 
-  <GridLayout left="0" top="35" height="100%" width="100%" class="page page-content">
+  <StackLayout
+    text="Barra"
+    left="0"
+    top="35"
+    height="35"
+    width="100%"
+    backgroundColor="#F9F9F9"
+    orientation="horizontal"
+    horizontalAlignment="left"
+    elevation="3"
+  >
+    <Button class="fa" text="Buscar...    &#xF002;" (tap)="onTap($event)" ios:backgroundColor="#CCC" ios:paddingLeft="10" ios:paddingRight="10" ios:margin="5" color="#666"></Button>
+    <Button class="fa" text="Filtrar &#xF0B0;" (tap)="goToProducts()" ios:backgroundColor="#CCC" ios:paddingLeft="10" ios:paddingRight="10" ios:margin="5" color="#666"></Button>
+
+  </StackLayout>
+
+  <GridLayout left="0" top="70" height="100%" width="100%" class="page page-content">
+
 
     <ListView [items]="items" class="list-group" separatorColor="#CCC">
+
+
       <ng-template let-item="item" >
 
         <StackLayout
+          [nsRouterLink]="['../item', item.id]"
         >
 
           <GridLayout
@@ -68,25 +89,25 @@
             >
 
               <Label
-                [nsRouterLink]="['../item', item.id]"
                 [text]="item.name"
                 fontSize="15">
               </Label>
 
               <Label
-                [nsRouterLink]="['../item', item.id]"
                 [text]="item.description"
                 textWrap="true"
                 fontSize="15"
-                color="#999">
+                color="#999"
+                marginBottom="5">
               </Label>
 
               <StackLayout
                 orientation="horizontal"
+                marginBottom="5"
               >
 
                 <Label
-                  text="R$ 800,00"
+                  text="R$ 400,00"
                   fontSize="18">
                 </Label>
 
@@ -103,8 +124,20 @@
               <StackLayout
                 orientation="horizontal"
               >
-                <Image src="font://&#xF0D1;" class="fa t-24" color="#00d790" height="14" marginRight="5"></Image>
-                <Label text="Grátis" fontSize="10" class="green"></Label>
+                <Label
+                  text="&#xF0D1; Grátis"
+                  fontSize="12"
+                  class="fa"
+                  color="rgb(15, 142, 98)">
+                </Label>
+
+                <Label
+                  text="&#xf017; Em 2 horas!"
+                  fontSize="12"
+                  marginLeft="10"
+                  class="fa"
+                  color="rgb(90, 160, 244)" >
+                </Label>
 
               </StackLayout>
 

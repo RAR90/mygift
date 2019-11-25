@@ -1,11 +1,185 @@
+<!-- Header -->
 <ActionBar
-    class="action-bar main-gradient"
-    ios:backgroundColor="rgb(1, 145, 97)"
+  title="test"
+  class="action-bar main-gradient"
+  ios:backgroundColor="rgb(1, 145, 97)"
 >
-    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
-    <Label class="action-bar-title" [text]="item.name"></Label>
-</ActionBar>
 
-<GridLayout>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="item.description"></Label>
-</GridLayout>
+  <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+  <Label class="action-bar-title" [text]="item.name"></Label>
+
+</ActionBar>
+<!--/ Header -->
+
+<!-- Content -->
+<ScrollView orientation="vertical">
+  <StackLayout
+    class="page page-content"
+    orientation="vertical"
+    ios:verticalAlignment="top"
+  >
+
+    <!-- Image -->
+    <StackLayout
+      class="page page-content"
+      orientation="vertical"
+      ios:verticalAlignment="top"
+      backgroundColor="#333"
+    >
+
+      <Image
+        width="200"
+        height="200"
+        row="0"
+        col="0"
+        [src]="item.image">
+      </Image>
+
+    </StackLayout>
+    <!--/ Image -->
+
+    <!-- Infos -->
+    <GridLayout
+      class="list-group-item"
+      rows="auto, *"
+      columns="auto, *"
+      padding="25"
+    >
+      <StackLayout
+        row="0"
+        col="1"
+        orientation="vertical"
+      >
+
+        <!-- Name & Description -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="10"
+        >
+
+          <Label
+            [text]="item.name"
+            fontSize="25"
+            marginBottom="10">
+          </Label>
+
+          <Label
+            [text]="item.description"
+            textWrap="true"
+            fontSize="17"
+            color="#999">
+          </Label>
+
+        </StackLayout>
+        <!--/ Name & Description -->
+
+        <!-- Price -->
+        <StackLayout
+          orientation="horizontal"
+          marginBottom="10"
+        >
+
+          <Label
+            text="R$ 400,00"
+            fontSize="20">
+          </Label>
+
+          <Label
+            text="R$ 800,00"
+            fontSize="20"
+            textDecoration="line-through"
+            color="#999"
+            paddingLeft="10">
+          </Label>
+
+        </StackLayout>
+        <!--/ Price -->
+
+        <!-- Delivery -->
+        <StackLayout
+          orientation="horizontal"
+          marginBottom="10"
+        >
+          <Label
+            text="&#xF0D1; Grátis"
+            fontSize="16"
+            class="fa"
+            color="rgb(15, 142, 98)">
+          </Label>
+
+          <Label
+            text="&#xf017; Em 2 horas!"
+            fontSize="16"
+            marginLeft="10"
+            class="fa"
+            color="rgb(90, 160, 244)" >
+          </Label>
+
+        </StackLayout>
+        <!--/ Delivery -->
+
+        <!-- Size -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="10"
+        >
+
+          <Label
+            text="Tamanho"
+            fontSize="12">
+          </Label>
+
+          <SegmentedBar
+            class="fa"
+            [items]="itemSizes"
+            selectedIndex="0">
+          </SegmentedBar>
+
+        </StackLayout>
+        <!--/ Size -->
+
+        <!-- Count -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="15"
+        >
+
+          <Label
+            text="Quantidade"
+            fontSize="12">
+          </Label>
+
+          <Button [text]="count" (tap)="displayActionDialog()" textAlign="left" background="#EEE" androidElevation="0"></Button>
+
+        </StackLayout>
+        <!--/ Count -->
+
+        <!-- Buy Filter -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="5"
+        >
+          <Button
+            (tap)="goToProducts()"
+            class="btn-primary"
+            backgroundColor="rgb(90, 160, 244)"
+            borderRadius="5"
+            color="#FFF"
+            width="175"
+            height="50"
+          >
+            <Span class="fa" text="&#xF07A; POR NO CARRINHO"></Span>
+          </Button>
+
+        </StackLayout>
+        <!--/ Buy Filter -->
+
+      </StackLayout>
+
+    </GridLayout>
+    <!--/ Infos -->
+
+  </StackLayout>
+
+</ScrollView>
+<!--/ Content -->

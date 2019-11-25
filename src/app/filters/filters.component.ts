@@ -16,7 +16,7 @@ export class FiltersComponent implements OnInit {
     }
 
     goToProducts() {
-        this.appComponent.bottomNavigation.nativeElement.selectedIndex = 0;
+        this.appComponent.bottomNavigationChild.nativeElement.selectedIndex = 0;
     }
 
     onCheckedChange(args: EventData) {

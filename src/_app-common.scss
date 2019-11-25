@@ -104,3 +104,14 @@ TabStripItem Label {
     font-size: 8pt;
 }
 
+
+
+.bottomNavIcon {
+    font-family: "FontAwesome";
+    font-size: 20;
+}
+
+.bottomNavIcon StackLayout {
+    font-family: inherit;
+    font-size: inherit;
+}

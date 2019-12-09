@@ -40,12 +40,20 @@
   </ActionItem>
 </ActionBar>
 
-<GridLayout class="page page-content">
+<ScrollView orientation="vertical">
+
   <StackLayout
+    class="page page-content"
     orientation="vertical"
+    textAlign="center"
+    padding="25"
   >
-    <Label class="page-placeholder" text="informações pessoais"></Label>
-    <Label class="page-placeholder" text="endereços de entrega"></Label>
-    <Label class="page-placeholder" text="cadastrar meio de pagamento"></Label>
+
+    <Image src="~/images/12.jpg" class="image-circle" width="200" height="200" marginTop="10"></Image>
+    <Button text="Alterar" width="150" height="40" background="rgb(30, 154, 197)" color="#FFF" borderRadius="5" marginTop="10"></Button>
+    <RadDataForm [source]="myperson" marginTop="25"></RadDataForm>
+
   </StackLayout>
-</GridLayout>
+
+
+</ScrollView>

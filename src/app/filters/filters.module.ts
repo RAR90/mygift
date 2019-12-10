@@ -1,19 +1,23 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { FiltersRoutingModule } from "./filters-routing.module";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { FiltersComponent } from "./filters.component";
+import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        FiltersRoutingModule
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forChild([
+            { path: "", redirectTo: "filters" },
+            { path: "filters", component: FiltersComponent }
+        ])
     ],
     declarations: [
         FiltersComponent
     ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    providers: [
+    ],
+    schemas: [NO_ERRORS_SCHEMA]
 })
 export class FiltersModule { }

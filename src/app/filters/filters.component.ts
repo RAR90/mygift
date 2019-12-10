@@ -1,31 +1,15 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { EventData } from "tns-core-modules/ui/page/page";
-import { Switch } from "tns-core-modules/ui/switch/switch";
+import { Component } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
-import { AppComponent } from "../app.component";
-
 @Component({
-    selector: "Filters",
+    moduleId: module.id,
+    selector: "filters-page",
     templateUrl: "./filters.component.html"
 })
+export class FiltersComponent {
+    constructor(private routerExtension: RouterExtensions) { };
 
-export class FiltersComponent implements OnInit {
-
-    constructor(private routerExtensions: RouterExtensions, private appComponent: AppComponent) {
-        // Use the component constructor to inject providers.
-    }
-
-    goToProducts() {
-        this.appComponent.bottomNavigationChild.nativeElement.selectedIndex = 0;
-    }
-
-    onCheckedChange(args: EventData) {
-        const sw = args.object as Switch;
-        /// sw.checked; // boolean
-    }
-
-    ngOnInit(): void {
-
-        // methods here
+    onNavigateWelcome() {
+        // Navigate to welcome page with clearHistory
+        this.routerExtension.navigate(["../welcome"], { clearHistory: true });
     }
 }

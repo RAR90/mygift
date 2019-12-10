@@ -1,0 +1,10 @@
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Bem vindo!"></Label>
+</ActionBar>
+
+<StackLayout orientation="vertical">
+  <Button text="Começar cadastro" [nsRouterLink]="['/signup-step-one']"></Button>
+  <Label text="ou" textWrap="true" width="100%" textAlignment="center"></Label>
+  <Button text="Entrar" [nsRouterLink]="['/tabs/default'], { clearHistory: true }"></Button>
+  <Button text="Sair" (tap)="onLogout()"></Button>
+</StackLayout>

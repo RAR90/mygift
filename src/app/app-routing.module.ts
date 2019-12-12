@@ -7,10 +7,12 @@ import { SignupStepTwoComponent } from "./signup-step-two/signup-step-two.compon
 import { SignupStepThreeComponent } from "./signup-step-three/signup-step-three.component";
 import { LoginComponent } from "./login/login.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
+import { SearchComponent } from "./search/search.component";
 
 export const COMPONENTS = [
   LoginComponent,
   WelcomeComponent,
+  SearchComponent,
   SignupStepOneComponent,
   SignupStepTwoComponent,
   SignupStepThreeComponent
@@ -41,6 +43,10 @@ const routes: Routes = [
   {
     path: "welcome",
     component: WelcomeComponent
+  },
+  {
+    path: "search",
+    component: SearchComponent
   },
   {
     path: "tabs",

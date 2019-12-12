@@ -1,8 +1,7 @@
 
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { TeamsComponent } from "./teams.component";
-import { TeamDetailComponent } from "./team-detail.component";
+import { SearchComponent } from "./search.component";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 @NgModule({
@@ -10,17 +9,15 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
         NativeScriptCommonModule,
         NativeScriptRouterModule,
         NativeScriptRouterModule.forChild([
-            { path: "", redirectTo: "teams" },
-            { path: "teams", component: TeamsComponent },
-            { path: "team/:id", component: TeamDetailComponent },
+            { path: "", redirectTo: "search" },
+            { path: "search", component: SearchComponent }
         ])
     ],
     declarations: [
-        TeamsComponent,
-        TeamDetailComponent,
+        SearchComponent
     ],
     providers: [
     ],
     schemas: [NO_ERRORS_SCHEMA]
 })
-export class TeamsModule { }
+export class SearchModule { }

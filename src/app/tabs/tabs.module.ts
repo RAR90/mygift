@@ -12,10 +12,10 @@ import { TabsComponent } from "./tabs.component";
             {
                 path: "default", component: TabsComponent, children: [
                     {
-                        path: "players",
-                        outlet: "playerTab",
+                        path: "products",
+                        outlet: "productsTab",
                         component: NSEmptyOutletComponent,
-                        loadChildren: "~/app/player/players.module#PlayersModule",
+                        loadChildren: "~/app/product/products.module#ProductsModule",
                     },
                     {
                         path: "filters",

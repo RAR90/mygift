@@ -12,8 +12,8 @@ traceEnable();
 
 export class MyErrorHandler implements ErrorHandler {
     handleError(error) {
-        console.log("### ErrorHandler Error: " + error.toString());
-        console.log("### ErrorHandler Stack: " + error.stack);
+        console.error("### ErrorHandler Error: " + error.toString());
+        console.error("### ErrorHandler Stack: " + error.stack);
     }
 }
 

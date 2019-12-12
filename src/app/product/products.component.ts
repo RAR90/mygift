@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { DataService, DataItem } from "../data.service";
 
 @Component({
-    selector: "ns-teams",
+    selector: "ns-products",
     moduleId: module.id,
-    templateUrl: "./teams.component.html",
+    templateUrl: "./products.component.html",
 })
-export class TeamsComponent implements OnInit {
+export class ProductsComponent implements OnInit {
     items: DataItem[];
 
     constructor(private itemService: DataService) { }

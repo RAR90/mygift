@@ -5,13 +5,13 @@ import { DataService, DataItem } from "../data.service";
 import { Subscription } from "rxjs";
 
 @Component({
-    selector: "ns-team-details",
+    selector: "ns-product-details",
     moduleId: module.id,
-    templateUrl: "./team-detail.component.html",
+    templateUrl: "./product-detail.component.html",
 })
-export class TeamDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
     item: DataItem;
-    subscription: Subscription;    
+    subscription: Subscription;
 
     constructor(
         private data: DataService,
@@ -31,7 +31,7 @@ export class TeamDetailComponent implements OnInit {
         this.subscription.unsubscribe();
     }
 
-    backTeams() {
+    backProducts() {
         this.routerExtension.back({ relativeTo: this.activeRoute });
     }
 }

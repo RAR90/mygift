@@ -3,7 +3,7 @@
 <GridLayout>
     <ListView [items]="items" class="list-group">
         <ng-template let-item="item">
-            <Label [nsRouterLink]="['../team', item.id]" [text]="item.name"
+            <Label [nsRouterLink]="['../product', item.id]" [text]="item.name"
                 class="list-group-item"></Label>
         </ng-template>
     </ListView>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
-import { DataService, DataItem } from "../data.service";
+import { DataService, DataItem } from "../shared/services/products.service";
 import { Subscription } from "rxjs";
 
 @Component({
@@ -23,7 +23,7 @@ export class ProductCartDetailComponent implements OnInit {
     ngOnInit(): void {
         this.subscription = this.route.params.subscribe(params => {
             const id = +params["id"];
-            this.item = this.data.getTeam(id);
+            this.item = this.data.getItem(id);
         })
     }
 

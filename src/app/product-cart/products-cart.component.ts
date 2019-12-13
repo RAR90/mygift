@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { DataService, DataItem } from "../data.service";
+import { DataService, DataItem } from "../shared/services/products.service";
 
 @Component({
     selector: "ns-products-cart",
@@ -13,6 +13,6 @@ export class ProductsCartComponent implements OnInit {
 
     ngOnInit(): void {
         // TODO: alterar para get produtos da classe de serviço
-        this.items = this.itemService.getTeams();
+        this.items = this.itemService.getItems();
     }
 }

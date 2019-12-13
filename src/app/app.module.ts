@@ -3,7 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule, COMPONENTS } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import { DataService } from "./data.service";
+import { DataService } from "./shared/services/products.service";
 import { NSModuleFactoryLoader } from "nativescript-angular/router";
 
 import { enable as traceEnable, addCategories } from "tns-core-modules/trace";
@@ -23,7 +23,7 @@ export class MyErrorHandler implements ErrorHandler {
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,

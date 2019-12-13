@@ -1,14 +1,24 @@
-<TabView androidTabsPosition="bottom" #bottomNavigation>
+<TabView
+    #bottomNavigation
+    class="mdi"
+    selectedTabTextColor="#00d790"
+    tabBackgroundColor="#F9F9F9"
+    tabTextFontSize="25"
+    androidTabsPosition="bottom"
+    IconRenderingMode="alwaysOriginal"
+>
 
-    <page-router-outlet *tabItem="{title: 'Produtos'}" name="productsTab" actionBarVisibility="aways">
-    </page-router-outlet>
+    <StackLayout *tabItem="{title: '&#xe190; '}" >
+        <page-router-outlet name="productsTab"></page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{title: '&#xe191; '}" >
+        <page-router-outlet name="filtersTab" actionBarVisibility="never"></page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{title: '&#xe192; '}" >
+        <page-router-outlet name="productsCartTab"></page-router-outlet>
+    </StackLayout>
+    <StackLayout *tabItem="{title: '&#xe160; '}" >
+        <page-router-outlet name="userInfosTab"></page-router-outlet>
+    </StackLayout>
 
-    <page-router-outlet *tabItem="{title: 'Filtros'}" name="filtersTab" actionBarVisibility="never">
-    </page-router-outlet>
-
-    <page-router-outlet *tabItem="{title: 'Carrinho'}" name="productsCartTab" actionBarVisibility="never">
-    </page-router-outlet>
-
-    <page-router-outlet *tabItem="{title: 'Perfil'}" name="userInfosTab" actionBarVisibility="never">
-    </page-router-outlet>
 </TabView>

@@ -1,7 +1,31 @@
-<ActionBar>
-    <Label text="User Infos"></Label>
+<!-- ActionBar -->
+<ActionBar title="MyGift" backgroundSpanUnderStatusBar="true">
+  <StackLayout class="container">
+    <Image class="logo" src="~/images/upicon.png"></Image>
+    <Label class="title" text="MyGift"></Label>
+  </StackLayout>
 </ActionBar>
+<!--/ ActionBar -->
 
-<StackLayout>
-    <Label text="User Infos"></Label>
-</StackLayout>
+
+<ScrollView orientation="vertical">
+  <StackLayout orientation="vertical" class="userInfosPage">
+
+    <Label text="Meus Dados" class="title"></Label>
+    <Label text="Nome: Rafael Antonio Ribeiro"></Label>
+    <Label text="CPF: 405.953.048-42"></Label>
+    <Label text="Telefone: 16 98252-9392"></Label>
+    <Button text="Alterar" width="200" marginTop="15" marginBottom="35" class="button button-primary button-lg"></Button>
+
+    <Label text="Endereço para Entrega" class="title"></Label>
+    <Label text="Rua: Nicolau Reinant Consenza, 112"></Label>
+    <Label text="Ribeirão Preto - SP"></Label>
+    <Button text="Alterar" width="200" marginTop="15" marginBottom="35" class="button button-primary button-lg"></Button>
+
+    <Label text="Acesso" class="title"></Label>
+    <Label text="Email: rafael@teclabs.com.br"></Label>
+    <Label text="Senha: **********"></Label>
+    <Button text="Alterar" width="200" marginTop="15" marginBottom="35" class="button button-primary button-lg"></Button>
+
+  </StackLayout>
+</ScrollView>

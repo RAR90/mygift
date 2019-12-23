@@ -17,7 +17,7 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
     ],
     declarations: [
         ProductsCartComponent,
-        ProductCartDetailComponent
+        ProductCartDetailComponent,
     ],
     providers: [
     ],

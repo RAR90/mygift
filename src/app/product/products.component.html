@@ -1,120 +1,59 @@
 <!-- ActionBar -->
-<ActionBar
-  title="test"
-  class="action-bar main-gradient"
-  ios:backgroundColor="rgb(1, 145, 97)"
-  backgroundSpanUnderStatusBar="true"
->
-
-  <StackLayout
-    orientation="horizontal"
-    horizontalAlignment="center"
-    ios:paddingTop="0"
-    ios:marginTop="0"
-    elevation="3"
-  >
-
-    <Image
-      src="~/images/upicon.png"
-      height="33">
-    </Image>
-
-    <Label
-      text="MyGift"
-      fontSize="18"
-      color="#FFF"
-      marginTop="8"
-      marginLeft="10">
-    </Label>
-
+<ActionBar title="MyGift" backgroundSpanUnderStatusBar="true">
+  <StackLayout class="container">
+    <Image class="logo" src="~/images/upicon.png"></Image>
+    <Label class="title" text="MyGift"></Label>
   </StackLayout>
 </ActionBar>
 <!--/ ActionBar -->
 
-<AbsoluteLayout >
-
+<!-- Page -->
+<AbsoluteLayout class="page page-content">
 
   <!-- Delivery local bar -->
-  <StackLayout
-    text="Barra"
-    left="0"
-    top="0"
-    height="35"
-    width="100%"
-    backgroundColor="#68a9f5"
-    orientation="horizontal"
-    horizontalAlignment="center"
-    elevation="3"
-  >
-    <Image src="font://&#xF041;" class="fa t-24" height="14" marginRight="5" marginLeft="15" color="#FFF"></Image>
-    <Label class="action-bar-endereco" text="Entregar: Rua Nicolay Gorbachov, 13... " ios:marginTop="4" android:marginTop="5" color="#FFF"></Label>
-    <Label class="action-bar-endereco" marginRight="15" text="Alterar" marginTop="4" color="#FFF"></Label>
-
+  <StackLayout class="deliveryBar">
+    <Image class="fas iconLocal" src="font://&#xF041;"></Image>
+    <Label class="local" text="Entregar: Rua Nicolay Gorbachov, 13..."></Label>
+    <Label class="changeBtn" text="Alterar"></Label>
   </StackLayout>
   <!--/ Delivery local bar -->
 
   <!-- Actions Bar -->
-  <StackLayout
-    text="Barra"
-    left="0"
-    top="35"
-    height="35"
-    width="100%"
-    backgroundColor="#F9F9F9"
-    orientation="horizontal"
-    horizontalAlignment="left"
-    elevation="3"
-  >
+  <StackLayout class="actionsBar">
 
     <Button
-      (tap)="goToProfile()"
-      class="fa"
-      text="Buscar...    &#xF002;"
-      ios:backgroundColor="#CCC"
-      ios:paddingLeft="10"
-      ios:paddingRight="10"
-      ios:margin="5"
-      color="#666">
+      class="fas button"
+      text="Buscar... &#xF002;"
+      (tap)="goToProfile()">
     </Button>
 
-    <Button class="fa" text="Filtrar &#xF0B0;" (tap)="goToProducts()" ios:backgroundColor="#CCC" ios:paddingLeft="10" ios:paddingRight="10" ios:margin="5" color="#666"></Button>
+    <Button
+      class="fas button"
+      text="Filtrar &#xF0B0;"
+      (tap)="goToProducts()">
+    </Button>
+
   </StackLayout>
   <!--/ Actions Bar -->
 
-
-  <GridLayout left="0" top="70" height="100%" width="100%" class="page page-content">
-
-
+  <!-- Products List -->
+  <GridLayout class="productsList">
     <ListView [items]="items" class="list-group" separatorColor="#CCC">
 
+      <!-- Product List Item -->
+      <ng-template let-item="item">
+        <StackLayout [nsRouterLink]="['../product', item.id]">
+          <GridLayout class="list-group-item" rows="auto, *" columns="auto, *" >
 
-      <ng-template let-item="item" >
-
-        <StackLayout
-          [nsRouterLink]="['../item', item.id]"
-        >
-
-          <GridLayout
-            class="list-group-item"
-            rows="auto, *"
-            columns="auto, *"
-          >
+            <!-- Product Image -->
             <Image
-              width="100"
-              height="100"
               row="0"
               col="0"
-              [src]="item.image"
-              marginLeft="0"
-              marginRight="15"
-              borderRadius="5">
+              [src]="item.image">
             </Image>
+            <!--/ Product Image -->
 
-            <StackLayout
-              row="0"
-              col="1"
-              orientation="vertical"
-            >
+            <StackLayout row="0" col="1" orientation="vertical">
 
               <Label
                 [text]="item.name"
@@ -155,7 +94,7 @@
                 <Label
                   text="&#xF0D1; Grátis"
                   fontSize="12"
-                  class="fa"
+                  class="fas"
                   color="rgb(15, 142, 98)">
                 </Label>
 
@@ -163,7 +102,7 @@
                   text="&#xf017; Em 2 horas!"
                   fontSize="12"
                   marginLeft="10"
-                  class="fa"
+                  class="fas"
                   color="rgb(90, 160, 244)" >
                 </Label>
 
@@ -172,15 +111,18 @@
             </StackLayout>
 
           </GridLayout>
-          <!-- <Label text="1" width="95%" height="0.5" background="#CCC"></Label> -->
 
         </StackLayout>
 
 
 
       </ng-template>
+      <!--/ List Item -->
+
     </ListView>
 
   </GridLayout>
+  <!--/ Products List -->
 
 </AbsoluteLayout>
+<!--/ Page -->

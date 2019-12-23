@@ -1,7 +1,88 @@
 <ActionBar>
-    <Label text="Filters Component"></Label>
+  <Label text="Filtrar"></Label>
 </ActionBar>
 
-<StackLayout>
-    <Label text="Filters"></Label>
+<StackLayout class="filtersPage">
+
+  <Label
+    class="title"
+    text="Filtrar">
+  </Label>
+
+  <!-- Row Filters - Gender -->
+  <StackLayout orientation="horizontal">
+
+    <!-- Button Circle - Male -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf222;" [class.button-clicked]="maleClicked" (tap)="maleClicked === true ? maleClicked = false : maleClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Masculino"></Label>
+    </StackLayout>
+    <!--/ Button Circle - Male -->
+
+    <!-- Button Circle - Female -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf221;" [class.button-clicked]="femaleClicked" (tap)="femaleClicked === true ? femaleClicked = false : femaleClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Feminino"></Label>
+    </StackLayout>
+    <!--/ Button Circle - Female -->
+
+  </StackLayout>
+  <!--/ Row Filters - Gender -->
+
+  <!-- Row Filters -->
+  <StackLayout orientation="horizontal">
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf77c;" [class.button-clicked]="kidsClicked" (tap)="kidsClicked === true ? kidsClicked = false : kidsClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Infantil"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf1ae;" [class.button-clicked]="teenClicked" (tap)="teenClicked === true ? teenClicked = false : teenClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Juvenil"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf183;" [class.button-clicked]="adultClicked" (tap)="adultClicked === true ? adultClicked = false : adultClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Adultos"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+  </StackLayout>
+  <!--/ Row Filters - Gender -->
+
+  <!-- Row Filters -->
+  <StackLayout orientation="horizontal">
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf553;" [class.button-clicked]="clothesClicked" (tap)="clothesClicked === true ? clothesClicked = false : clothesClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Roupas"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf54b;" [class.button-clicked]="shoesClicked" (tap)="shoesClicked === true ? shoesClicked = false : shoesClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Calçados"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+    <!-- Button Circle -->
+    <StackLayout class="buttonCircle" orientation="vertical">
+      <Button class="fas buttonCircleIcon" text="&#xf0f2;" [class.button-clicked]="fittingsClicked" (tap)="fittingsClicked === true ? fittingsClicked = false : fittingsClicked = true"></Button>
+      <Label class="buttonCircleLabel" text="Acessórios"></Label>
+    </StackLayout>
+    <!--/ Button Circle -->
+
+  </StackLayout>
+  <!--/ Row Filters - Gender -->
+
+  <Button text="Filtrar" (tap)="filter()" width="200" marginTop="15" class="button button-primary button-lg"></Button>
+
 </StackLayout>

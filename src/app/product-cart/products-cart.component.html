@@ -1,10 +1,134 @@
-<ActionBar title="Team List" class="action-bar"></ActionBar>
+<!-- ActionBar -->
+<ActionBar title="MyGift" backgroundSpanUnderStatusBar="true">
+  <StackLayout class="container">
+    <Image class="logo" src="~/images/upicon.png"></Image>
+    <Label class="title" text="MyGift"></Label>
+  </StackLayout>
+</ActionBar>
+<!--/ ActionBar -->
 
-<GridLayout>
-    <ListView [items]="items" class="list-group">
-        <ng-template let-item="item">
-            <Label [nsRouterLink]="['../product-cart', item.id]" [text]="item.name"
-                class="list-group-item"></Label>
-        </ng-template>
+<!-- Page -->
+<AbsoluteLayout class="page page-content">
+
+  <!-- Delivery local bar -->
+  <StackLayout class="deliveryBar">
+    <Image class="fas iconLocal" src="font://&#xF041;"></Image>
+    <Label class="local" text="Entregar: Rua Nicolay Gorbachov, 13..."></Label>
+    <Label class="changeBtn" text="Alterar"></Label>
+  </StackLayout>
+  <!--/ Delivery local bar -->
+
+  <!-- Summary cart -->
+  <StackLayout class="summaryCart" orientation="horizontal">
+
+    <!-- Summary infos -->
+    <StackLayout class="summaryInfos" orientation="vertical">
+      <Label text="25 produtos no carrinho" textWrap="true"></Label>
+      <Label text="Sub-total: R$ 3500,00" textWrap="true"></Label>
+      <Label text="Frete: R$ 90,00" textWrap="true"></Label>
+      <Label text="Total: R$ 3590,00" textWrap="true"></Label>
+    </StackLayout>
+    <!-- Summary infos -->
+
+    <!-- Button pay container -->
+    <StackLayout class="buttonPayContainer" orientation="vertical">
+      <StackLayout class="buttonCircle buttonCircleSolid" orientation="vertical">
+        <Button class="fas buttonCircleIcon" text="&#xf09d;" ></Button>
+        <Label class="buttonCircleLabel" text="PAGAR"></Label>
+      </StackLayout>
+    </StackLayout>
+    <!--/ Button pay container -->
+
+  </StackLayout>
+  <!--/ Summary cart -->
+
+  <!-- Products List -->
+  <GridLayout class="productsCartList">
+    <ListView [items]="items" class="list-group" separatorColor="#CCC">
+
+      <!-- Product List Item -->
+      <ng-template let-item="item">
+        <StackLayout [nsRouterLink]="['../product-cart', item.id]">
+          <GridLayout class="list-group-item" rows="auto, *" columns="auto, *" >
+
+            <!-- Product Image -->
+            <Image
+              row="0"
+              col="0"
+              [src]="item.image">
+            </Image>
+            <!--/ Product Image -->
+
+            <StackLayout row="0" col="1" orientation="vertical">
+
+              <Label
+                [text]="item.name"
+                fontSize="15">
+              </Label>
+
+              <Label
+                [text]="item.description"
+                textWrap="true"
+                fontSize="15"
+                color="#999"
+                marginBottom="5">
+              </Label>
+
+              <StackLayout
+                orientation="horizontal"
+                marginBottom="5"
+              >
+
+                <Label
+                  text="R$ 400,00"
+                  fontSize="18">
+                </Label>
+
+                <Label
+                  text="R$ 800,00"
+                  fontSize="18"
+                  textDecoration="line-through"
+                  color="#999"
+                  paddingLeft="10">
+                </Label>
+
+              </StackLayout>
+
+              <StackLayout
+                orientation="horizontal"
+              >
+                <Label
+                  text="&#xF0D1; Grátis"
+                  fontSize="12"
+                  class="fas"
+                  color="rgb(15, 142, 98)">
+                </Label>
+
+                <Label
+                  text="&#xf017; Em 2 horas!"
+                  fontSize="12"
+                  marginLeft="10"
+                  class="fas"
+                  color="rgb(90, 160, 244)" >
+                </Label>
+
+              </StackLayout>
+
+            </StackLayout>
+
+          </GridLayout>
+
+        </StackLayout>
+
+
+
+      </ng-template>
+      <!--/ List Item -->
+
     </ListView>
-</GridLayout>
+
+  </GridLayout>
+  <!--/ Products List -->
+
+</AbsoluteLayout>
+<!--/ Page -->

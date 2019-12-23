@@ -10,6 +10,7 @@ import { Subscription } from "rxjs";
     templateUrl: "./product-cart-detail.component.html",
 })
 export class ProductCartDetailComponent implements OnInit {
+
     item: DataItem;
     subscription: Subscription;
 
@@ -31,7 +32,7 @@ export class ProductCartDetailComponent implements OnInit {
         this.subscription.unsubscribe();
     }
 
-    backTeams() {
+    backProducts() {
         this.routerExtension.back({ relativeTo: this.activeRoute });
     }
 }

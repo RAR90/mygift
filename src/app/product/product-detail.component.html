@@ -1,4 +1,178 @@
-<ActionBar title="Team Details" class="action-bar"></ActionBar>
+<!-- Header -->
+<ActionBar [title]=" " color="white">
+  <NavigationButton visibility="collapse"></NavigationButton>
+  <StackLayout class="actionBarContainer">
+    <Label class="fas actionBarBackButton" text="&#xf104;" textWrap="true" (tap)="backProducts()"></Label>
+    <Label class="actionBarTitle" [text]="item.name" textWrap="true"></Label>
+  </StackLayout>
+</ActionBar>
+<!--/ Header -->
+
+<!-- Content -->
+<ScrollView orientation="vertical">
+  <StackLayout
+    class="page page-content"
+    orientation="vertical"
+    ios:verticalAlignment="top"
+  >
+
+    <!-- Image -->
+    <StackLayout
+      class="page page-content"
+      orientation="vertical"
+      ios:verticalAlignment="top"
+      backgroundColor="#333"
+    >
+
+      <Image
+        width="200"
+        height="200"
+        row="0"
+        col="0"
+        [src]="item.image">
+      </Image>
+
+    </StackLayout>
+    <!--/ Image -->
+
+    <!-- Infos -->
+    <GridLayout
+      class="list-group-item"
+      rows="auto, *"
+      columns="auto, *"
+      padding="25"
+    >
+      <StackLayout
+        row="0"
+        col="1"
+        orientation="vertical"
+      >
+
+        <!-- Name & Description -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="10"
+        >
+
+          <Label
+            [text]="item.name"
+            fontSize="25"
+            marginBottom="10">
+          </Label>
+
+          <Label
+            [text]="item.description"
+            textWrap="true"
+            fontSize="17"
+            color="#999">
+          </Label>
+
+        </StackLayout>
+        <!--/ Name & Description -->
+
+        <!-- Price -->
+        <StackLayout
+          orientation="horizontal"
+          marginBottom="10"
+        >
+
+          <Label
+            text="R$ 400,00"
+            fontSize="20">
+          </Label>
+
+          <Label
+            text="R$ 800,00"
+            fontSize="20"
+            textDecoration="line-through"
+            color="#999"
+            paddingLeft="10">
+          </Label>
+
+        </StackLayout>
+        <!--/ Price -->
+
+        <!-- Delivery -->
+        <StackLayout
+          orientation="horizontal"
+          marginBottom="15"
+        >
+          <Label
+            text="&#xF0D1; Grátis"
+            fontSize="12"
+            class="fas"
+            color="rgb(15, 142, 98)">
+          </Label>
+
+          <Label
+            text="&#xf017; Em 2 horas!"
+            fontSize="12"
+            marginLeft="10"
+            class="fas"
+            color="rgb(90, 160, 244)" >
+          </Label>
+
+        </StackLayout>
+        <!--/ Delivery -->
+
+        <!-- Size -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="10"
+        >
+
+          <Label
+            text="Tamanho"
+            fontSize="12">
+          </Label>
+
+          <SegmentedBar
+            class="fa"
+            [items]="itemSizes"
+            selectedIndex="0">
+          </SegmentedBar>
+
+        </StackLayout>
+        <!--/ Size -->
+
+        <!-- Count -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="15"
+        >
+
+          <Label
+            text="Quantidade"
+            fontSize="12">
+          </Label>
+
+          <Button [text]="count" (tap)="displayActionDialog()" textAlign="left" background="#EEE" androidElevation="0"></Button>
+
+        </StackLayout>
+        <!--/ Count -->
+
+        <!-- Buy Filter -->
+        <StackLayout
+          orientation="vertical"
+          marginBottom="5"
+        >
+
+            <Button text="&#xF07A; POR NO CARRINHO" (tap)="filter()" width="225" marginTop="15" class="button button-primary button-lg fas"></Button>
+
+        </StackLayout>
+        <!--/ Buy Filter -->
+
+      </StackLayout>
+
+    </GridLayout>
+    <!--/ Infos -->
+
+  </StackLayout>
+
+</ScrollView>
+<!--/ Content -->
+
+<!-- <ActionBar title="Team Details" class="action-bar"></ActionBar>
 <StackLayout flexDirection="column" class="page" class="m-15">
     <Label [text]="item.id"></Label>
     <Label [text]="item.name + ' Details'"></Label>
@@ -6,4 +180,4 @@
     <Button text="next team" [nsRouterLink]="['../', item.id + 1]"></Button>
     <Button text="teams" [nsRouterLink]="['../../teams']"></Button>
     <Button text="Back-Teams" (tap)="backProducts()"></Button>
-</StackLayout>
+</StackLayout> -->

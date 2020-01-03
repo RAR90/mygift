@@ -1,8 +1,44 @@
-<ActionBar>
-  <Label text="Login"></Label>
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Login!"></Label>
 </ActionBar>
 
-<StackLayout>
-  <Label text="Página de login"></Label>
-  <Button text="Entrar" (tap)="onNavigateWelcome()"></Button>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="wellcome page" orientation="vertical">
+
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+
+      <Image class="wellcomeLogo" src="~/images/logo128px.png"></Image>
+
+      <Label class="wellcomeTitle fadeIn" text="Entrar..." textWrap="true"></Label>
+      <Label class="wellcomeSubTitle fadeIn" text="Entre para poder comprar!" textWrap="true"></Label>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="E-mail" textWrap="true"></Label>
+        <TextField
+          hint="ex.: email@gmail.com"
+          secure="false"
+          keyboardType="email"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Senha" textWrap="true"></Label>
+        <TextField
+          hint="Digite sua senha..."
+          secure="true"
+          returnKeyType="done"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+
+      <Button class="button button-primary button-lg" text="Entrar" (tap)="onNavigateWelcome()"></Button>
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

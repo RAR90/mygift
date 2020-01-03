@@ -2,8 +2,24 @@
   <Label class="action-bar-title" text="Bem vindo!"></Label>
 </ActionBar>
 
-<StackLayout orientation="vertical">
-  <Button text="Começar cadastro" [nsRouterLink]="['/signup-step-one']"></Button>
-  <Label text="ou" textWrap="true" width="100%" textAlignment="center"></Label>
-  <Button text="Entrar" (tap)="onLogout()"></Button>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="wellcome page" orientation="vertical">
+    <Image class="wellcomeLogo bounceIn" src="~/images/logo128px.png"></Image>
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+      <Label class="wellcomeTitle fadeIn" text="Olá!" textWrap="true"></Label>
+    </StackLayout>
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+      <Label class="wellcomeSubTitle fadeIn" text="Encontre aqui o seu presente entregue em até 2 horas!" textWrap="true"></Label>
+    </StackLayout>
+
+    <Button class="bounceIn button button-primary button-lg" text="Começar cadastro" [nsRouterLink]="['/signup-step-one']"></Button>
+
+    <StackLayout class="bounceIn" orientation="vertical" textAlignment="center">
+      <Label class="wellcomeOr" text="ou" textWrap="true"></Label>
+    </StackLayout>
+
+    <Button class="bounceIn button button-primary button-lg" text="Entrar" (tap)="onLogout()"></Button>
+  </StackLayout>
+</ScrollView>

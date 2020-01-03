@@ -1,24 +1,23 @@
 <TabView
-    #bottomNavigation
-    class="fas"
-    selectedTabTextColor="#00d790"
-    tabBackgroundColor="#F9F9F9"
-    tabTextFontSize="20"
-    androidTabsPosition="bottom"
-    IconRenderingMode="alwaysOriginal"
+  #bottomNavigation
+  class="fas fa-19"
+  selectedTabTextColor="#00d790"
+  tabBackgroundColor="#F9F9F9"
+  androidTabsPosition="bottom"
+  IconRenderingMode="alwaysOriginal"
 >
 
     <StackLayout *tabItem="{title: '&#xf06b; '}" >
-        <page-router-outlet name="productsTab"></page-router-outlet>
+      <page-router-outlet name="productsTab" actionBarVisibility="aways"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: '&#xf0b0; '}" >
-        <page-router-outlet name="filtersTab" actionBarVisibility="never"></page-router-outlet>
+      <page-router-outlet name="filtersTab" actionBarVisibility="never"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: '&#xf290; 5'}" >
-        <page-router-outlet name="productsCartTab"></page-router-outlet>
+      <page-router-outlet name="productsCartTab" actionBarVisibility="aways"></page-router-outlet>
     </StackLayout>
     <StackLayout *tabItem="{title: '&#xf2bd; '}" >
-        <page-router-outlet name="userInfosTab"></page-router-outlet>
+      <page-router-outlet name="userInfosTab" actionBarVisibility="aways"></page-router-outlet>
     </StackLayout>
 
 </TabView>

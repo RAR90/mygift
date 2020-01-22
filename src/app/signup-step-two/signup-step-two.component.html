@@ -1,8 +1,44 @@
-<ActionBar>
-  <Label text="Segundo Passo"></Label>
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Segundo Passo"></Label>
 </ActionBar>
 
-<StackLayout orientation="vertical">
-  <Label text="Crie uma senha" textWrap="true"></Label>
-  <Button text="Ir para passo 3" [nsRouterLink]="['/signup-step-three']"></Button>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="step-one page" orientation="vertical">
+
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+
+      <Image class="wellcomeLogo" marginTop="75" src="~/images/logo128px.png"></Image>
+
+      <Label class="wellcomeSubTitle fadeIn" text="Crie uma nova senha" textWrap="true"></Label>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Senha" textWrap="true"></Label>
+        <TextField
+          hint="Crie uma senha..."
+          secure="true"
+          returnKeyType="done"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Repita a senha" textWrap="true"></Label>
+        <TextField
+          hint="Repita a senha criada"
+          secure="true"
+          returnKeyType="done"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <FlexboxLayout class="buttonCircle solid" orientation="horizontal" justifyContent="flex-end">
+        <Button class="fas buttonCircleIcon" text="&#xf105;" [nsRouterLink]="['/signup-step-three']"></Button>
+      </FlexboxLayout>
+
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

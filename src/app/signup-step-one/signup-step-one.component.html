@@ -1,8 +1,56 @@
-<ActionBar>
-  <Label text="Primeiro Passo"></Label>
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Primeiro Passo"></Label>
 </ActionBar>
 
-<StackLayout orientation="vertical">
-  <Label text="Cadastro de nome, cpf e email" textWrap="true"></Label>
-  <Button text="Ir para passo 2" [nsRouterLink]="['/signup-step-two']"></Button>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="step-one page" orientation="vertical">
+
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+
+      <Image class="wellcomeLogo" marginTop="75" src="~/images/logo128px.png"></Image>
+
+      <Label class="wellcomeSubTitle fadeIn" text="Informe seus dados" textWrap="true"></Label>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Nome Completo" textWrap="true"></Label>
+        <TextField
+          hint="Seu Nome Completo"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="CPF" textWrap="true"></Label>
+        <TextField
+          hint="000.000.000-00"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Celular" textWrap="true"></Label>
+        <TextField
+          hint="00 00000-0000"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <FlexboxLayout class="buttonCircle solid" orientation="horizontal" justifyContent="flex-end">
+        <Button class="fas buttonCircleIcon" text="&#xf105;" (tap)="onNavigateWelcome()"></Button>
+      </FlexboxLayout>
+
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>
+

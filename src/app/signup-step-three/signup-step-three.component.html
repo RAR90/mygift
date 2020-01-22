@@ -1,8 +1,66 @@
-<ActionBar>
-  <Label text="Terceiro Passo"></Label>
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Terceiro Passo"></Label>
 </ActionBar>
 
-<StackLayout orientation="vertical">
-  <Label text="Inclua um endereço para entrega" textWrap="true"></Label>
-  <Button text="Concluir" [nsRouterLink]="['/tabs/default']"></Button>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="step-one page" orientation="vertical">
+
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+
+      <Image class="wellcomeLogo" marginTop="75" src="~/images/logo128px.png"></Image>
+
+      <Label class="wellcomeSubTitle fadeIn" text="Cadastre um endereço para entrega!" textWrap="true"></Label>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Logradouro" textWrap="true"></Label>
+        <TextField
+          hint="ex.: Nome da Rua"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Número" textWrap="true"></Label>
+        <TextField
+          hint="ex.: 0000"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="CEP" textWrap="true"></Label>
+        <TextField
+          hint="0000-000"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15">
+        <Label text="Recebedor" textWrap="true"></Label>
+        <TextField
+          hint="Nome de quem irá receber"
+          secure="false"
+          returnKeyType="next"
+          autocorrect="false"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <FlexboxLayout class="buttonCircle solid" orientation="horizontal" justifyContent="flex-end">
+        <Button class="fas buttonCircleIcon" text="&#xf105;" [nsRouterLink]="['/tabs/default']"></Button>
+      </FlexboxLayout>
+
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>

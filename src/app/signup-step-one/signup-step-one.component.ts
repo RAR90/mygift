@@ -13,6 +13,6 @@ export class SignupStepOneComponent {
 
     onNavigateWelcome() {
       // Navigate to welcome page with clearHistory
-      this.routerExtension.navigate(["../welcome"], { clearHistory: true });
+      this.routerExtension.navigate(["../signup-step-two"], { clearHistory: false });
     }
 }

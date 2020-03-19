@@ -1,8 +1,7 @@
 <!-- ActionBar -->
-<ActionBar title="MyGift" backgroundSpanUnderStatusBar="true">
+<ActionBar title="MyGift" backgroundSpanUnderStatusBar="true" backgroundColor="#1281dc" flat="true">
   <StackLayout class="container">
-    <Image class="logo" src="~/images/upicon.png"></Image>
-    <Label class="title" text="MyGift"></Label>
+    <Image class="logo" src="~/images/iconbrd.png"></Image>
   </StackLayout>
 </ActionBar>
 <!--/ ActionBar -->
@@ -21,17 +20,17 @@
   <!-- Actions Bar -->
   <StackLayout class="actionsBar">
 
-    <Button
-      class="fas button"
+    <Label
+      class="fas actionLink"
       text="Buscar... &#xF002;"
       (tap)="goToProfile()">
-    </Button>
+    </Label>
 
-    <Button
-      class="fas button"
+    <Label
+      class="fas actionLink"
       text="Filtrar &#xF0B0;"
       (tap)="goToProducts()">
-    </Button>
+    </Label>
 
   </StackLayout>
   <!--/ Actions Bar -->

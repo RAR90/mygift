@@ -10,7 +10,9 @@ import { RouterExtensions } from "nativescript-angular/router";
 export class WelcomeComponent {
     constructor(
         private routerExtension: RouterExtensions
-    ) { };
+    ) {
+        this.routerExtension.navigate(['/tabs/default'], { clearHistory: true });
+    };
 
     onLogout() {
         // Navigate to login page with clearHistory

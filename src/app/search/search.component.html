@@ -1,7 +1,34 @@
-<ActionBar>
-    <Label text="Search Component"></Label>
+<ActionBar class="action-bar">
+  <Label class="action-bar-title" text="Buscar"></Label>
 </ActionBar>
 
-<StackLayout>
-    <Label text="Search"></Label>
-</StackLayout>
+<ScrollView orientation="vertical">
+  <StackLayout class="search-page page" orientation="vertical">
+
+
+    <StackLayout class="fadeIn" orientation="vertical" textAlignment="center">
+
+      <Image class="topLogo" marginTop="75" src="~/images/logo128px.png"></Image>
+
+      <Label class="Title fadeIn" text="O que você procura?" textWrap="true"></Label>
+      <Label class="SubTitle fadeIn" text="Encontre o presente perfeito para quem você ama!" textWrap="true"></Label>
+
+      <StackLayout orientation="vertical" width="75%" marginBottom="15" class="searchInput">
+        <TextField
+          hint="Digite sua busca..."
+          secure="false"
+          returnKeyType="done"
+          autocorrect="false"
+          fontSize="20"
+          height="60"
+          ios:borderRadius="50"
+          class="input">
+        </TextField>
+      </StackLayout>
+
+      <Button class="fas button button-primary button-lg" text="BUSCAR &#xF002;" width="170" [nsRouterLink]="['/tabs/default']"></Button>
+
+    </StackLayout>
+
+  </StackLayout>
+</ScrollView>
